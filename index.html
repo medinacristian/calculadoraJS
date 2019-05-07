@@ -15,7 +15,7 @@
     <div class="main">
 
       <form name="form">
-        <input class="textview" name="textview">
+        <input class="textview" name="textview" id="textview">
       </form>
 
       <table>
@@ -38,7 +38,7 @@
           <td><input class="button" type="button" value="+" onclick="insertar('+')"></td>
         </tr>
         <tr> 
-          <td><input class="button" type="button" value="1" onclick="insertar(1)"></td>
+          <td><input class="button" type="button" value="1" onclick="insertar(1)" onkeyup=""></td>
           <td><input class="button" type="button" value="2" onclick="insertar(2)"></td>
           <td><input class="button" type="button" value="3" onclick="insertar(3)"></td>
           <td rowspan="2"><input class="button boton-largo" type="button" value="=" onclick="resultado()"></td>

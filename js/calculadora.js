@@ -1,23 +1,58 @@
+function getValue() {
+  // Obtengo el valor del input
+  return document.getElementById('textview').value;
+}
+
+function getTextview() {
+  // Obtengo el valor del elemento input
+  return document.getElementById('textview');
+}
+
+
 function insertar(num) {
-  document.form.textview.value = document.form.textview.value + num;
+  getTextview().value = getValue() + num;
 }
 
 function resultado() {
-  var exp = document.form.textview.value;
-  if(exp) {
-    document.form.textview.value = eval(exp);
+  if(getValue()) {
+    getTextview().value = eval(getValue());
   }
 
 }
 
 function limpiar() {
-  document.form.textview.value = "";
+  getTextview().value = "";
 }
 
 function eliminar() {
-  var exp = document.form.textview.value;
-
-  document.form.textview.value = exp.substring(0, exp.length - 1);
+  var exp = getValue();
+  getTextview().value = exp.substring(0, exp.length - 1);
 }
 
-// TODO: Usar teclado numérico para capturar datos
+
+document.onkeydown = insertarTecla;
+function insertarTecla(event) {
+    
+  // Insertar en textview
+  var valoresPermitidos = ['0','1','2','3','4','5','6','7','8','9','+','-','*','/','.'];
+  if(valoresPermitidos.includes(event.key)) {
+    getTextview().value = getValue() + event.key;
+  }
+
+  // Realizar el cálculo
+  if(event.key == 'Enter') {
+    resultado();
+  }
+
+  // Eliminar un caracter
+  if(event.key == 'Backspace') {
+    eliminar();
+  }
+
+  // Limpiar pantalla
+  if(event.key == 'Escape') {
+    limpiar();
+  }
+
+
+}
