@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  width: 50;
+  height: 50;
+  font-size: 25;
+  margin: 2;
+}
+
+.boton-ancho {
+  width: 106px;
+}
+
+.boton-largo {
+  height: 106;
+}
+
+.textview {
+  width: 217;
+  margin: 5;
+  font-size: 35;
+  padding: 5;
+}
+
+.main {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  background: lightblue;
+}
